@@ -18,15 +18,15 @@ namespace Laurus.Pfeffer.Server.CommandLine
 		{
 			var cd = System.IO.Directory.GetCurrentDirectory();
 			var container = BuildContainer(cd);
-			//var service = container.Resolve<IService>();
-			//service.Start();
-			//HostFactory.Run(x =>
-			//{
-			//	x.Service<IService>(s =>
-			//	{
-			//		s.ServiceName = "Pfeffer Server";
-			//	});
-			//});
+			HostFactory.Run(x =>
+			{
+				x.Service(settings => container.Resolve<ServiceControl>());
+				x.RunAsLocalService();
+				x.SetDescription("TaskBoss Minion");
+				x.SetDisplayName("Task Boss Minion");
+				x.SetServiceName("TaskBossMinion");
+				x.StartAutomatically();
+			});
 			var server = container.Resolve<IServerQueue>();
 			server.Send(new TestMessage() { Content = "blah blah blah" }, "all");
 		}
@@ -35,6 +35,7 @@ namespace Laurus.Pfeffer.Server.CommandLine
 		{
 			var container = new WindsorContainer();
 			container.Install(FromAssembly.InDirectory(new AssemblyFilter(directory, "Laurus*.dll")));
+			container.Register(Component.For<ServiceControl>().ImplementedBy<ServiceController>());
 			return container;
 		}
 	}

@@ -46,14 +46,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="uhttpsharp">
+      <HintPath>..\lib\uhttpsharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HttpHandlers\AddJobHandler.cs" />
+    <Compile Include="HttpListener.cs" />
+    <Compile Include="Interface\IHttpListener.cs" />
+    <Compile Include="Interface\IJobStore.cs" />
+    <Compile Include="Interface\IJobScheduler.cs" />
     <Compile Include="Interface\IServerQueue.cs" />
     <Compile Include="ServerQueue.cs" />
     <Compile Include="ServerService.cs" />
     <Compile Include="Installer\ServerInstaller.cs" />
     <Compile Include="Interface\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindsorHandlerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

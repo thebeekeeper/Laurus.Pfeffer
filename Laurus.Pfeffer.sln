@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laurus.Pfeffer.Server.CommandLine", "Laurus.Pfeffer.Server.CommandLine\Laurus.Pfeffer.Server.CommandLine.csproj", "{B80C1322-4CBC-4DCA-8A16-2A4ECF6A47E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laurus.Pfeffer.Server", "Laurus.Pfeffer.Server\Laurus.Pfeffer.Server.csproj", "{C748D73C-D111-4DF3-9D43-B4A996AC4801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laurus.Pfeffer.Client", "Laurus.Pfeffer.Client\Laurus.Pfeffer.Client.csproj", "{786B98AE-A120-46E2-BB3C-FABF706EE698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laurus.Pfeffer.Messages", "Laurus.Pfeffer.Messages\Laurus.Pfeffer.Messages.csproj", "{58CB5072-98CD-4354-85DE-51D6C18C3504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laurus.Pfeffer.Client.Service", "Laurus.Pfeffer.Client.Service\Laurus.Pfeffer.Client.Service.csproj", "{234D0CBA-E7B4-4293-830B-8E42DC7D099B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B80C1322-4CBC-4DCA-8A16-2A4ECF6A47E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80C1322-4CBC-4DCA-8A16-2A4ECF6A47E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80C1322-4CBC-4DCA-8A16-2A4ECF6A47E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80C1322-4CBC-4DCA-8A16-2A4ECF6A47E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C748D73C-D111-4DF3-9D43-B4A996AC4801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C748D73C-D111-4DF3-9D43-B4A996AC4801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C748D73C-D111-4DF3-9D43-B4A996AC4801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C748D73C-D111-4DF3-9D43-B4A996AC4801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{786B98AE-A120-46E2-BB3C-FABF706EE698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{786B98AE-A120-46E2-BB3C-FABF706EE698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{786B98AE-A120-46E2-BB3C-FABF706EE698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{786B98AE-A120-46E2-BB3C-FABF706EE698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58CB5072-98CD-4354-85DE-51D6C18C3504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58CB5072-98CD-4354-85DE-51D6C18C3504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58CB5072-98CD-4354-85DE-51D6C18C3504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58CB5072-98CD-4354-85DE-51D6C18C3504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{234D0CBA-E7B4-4293-830B-8E42DC7D099B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{234D0CBA-E7B4-4293-830B-8E42DC7D099B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{234D0CBA-E7B4-4293-830B-8E42DC7D099B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{234D0CBA-E7B4-4293-830B-8E42DC7D099B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

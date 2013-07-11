@@ -11,6 +11,7 @@ namespace Laurus.Pfeffer.Server
 	public class WindsorHandlerFactory : IHandlerFactory
 	{
 		// TODO: refactor this to not be a service locator
+		// - can it take an array of HttpRequestHandlers?
 		public WindsorHandlerFactory(IWindsorContainer container)
 		{
 			_container = container;

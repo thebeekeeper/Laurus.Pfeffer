@@ -8,16 +8,17 @@ using uhttpsharp;
 
 namespace Laurus.Pfeffer.Server.HttpHandlers
 {
-	public class AddJobHandler : HttpRequestHandler
+	public class ListJobsHandler : HttpRequestHandler
 	{
-		public AddJobHandler(IJobStore jobStore)
+		public ListJobsHandler(IJobStore jobStore)
 		{
 			_jobStore = jobStore;
 		}
 
 		public override HttpResponse Handle(HttpRequest httpRequest)
 		{
-			return new HttpResponse(HttpResponseCode.Ok, "adding job");
+			var rval = "";
+			return new HttpResponse(HttpResponseCode.Ok, rval);
 		}
 
 		private IJobStore _jobStore;

@@ -27,6 +27,8 @@ namespace Laurus.Pfeffer.Server.CommandLine
 				x.SetServiceName("TaskBossMinion");
 				x.StartAutomatically();
 			});
+
+			// for testing only
 			var server = container.Resolve<IServerQueue>();
 			server.Send(new TestMessage() { Content = "blah blah blah" }, "all");
 		}

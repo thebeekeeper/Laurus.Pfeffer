@@ -51,12 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Job.cs" />
     <Compile Include="HttpHandlers\AddJobHandler.cs" />
+    <Compile Include="HttpHandlers\GetJobHandler.cs" />
+    <Compile Include="HttpHandlers\ListJobsHandler.cs" />
     <Compile Include="HttpListener.cs" />
     <Compile Include="Interface\IHttpListener.cs" />
+    <Compile Include="Interface\IJobPublisher.cs" />
     <Compile Include="Interface\IJobStore.cs" />
     <Compile Include="Interface\IJobScheduler.cs" />
     <Compile Include="Interface\IServerQueue.cs" />
+    <Compile Include="JobPublisher.cs" />
+    <Compile Include="JobStore.cs" />
     <Compile Include="ServerQueue.cs" />
     <Compile Include="ServerService.cs" />
     <Compile Include="Installer\ServerInstaller.cs" />

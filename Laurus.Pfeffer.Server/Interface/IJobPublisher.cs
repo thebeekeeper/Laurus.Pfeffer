@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Laurus.Pfeffer.Server.Interface
 {
-	public interface IJobStore
+	public interface IJobPublisher
 	{
-		Entity.Job GetJobById(int id);
-
-		IEnumerable<Entity.Job> GetAll();
-
-		int Add(Entity.Job job);
+		void Publish(Entity.Job job);
 	}
 }

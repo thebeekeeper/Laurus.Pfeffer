@@ -18,8 +18,10 @@ namespace Laurus.Pfeffer.Server.Installer
 			container.Register(Component.For<IService>().ImplementedBy<ServerService>());
 			container.Register(Component.For<IServerQueue>().ImplementedBy<ServerQueue>());
 			container.Register(Component.For<IHttpListener>().ImplementedBy<HttpListener>());
+			container.Register(Component.For<IJobStore>().ImplementedBy<JobStore>());
 
 			container.Register(Component.For<HttpRequestHandler>().Named("addjob").ImplementedBy<AddJobHandler>());
+			container.Register(Component.For<HttpRequestHandler>().Named("getjob").ImplementedBy<GetJobHandler>());
 			container.Register(Component.For<IHandlerFactory>().ImplementedBy<WindsorHandlerFactory>());
 			// TODO: get rid of service locator in WindsorHandlerFactory
 			container.Register(Component.For<IWindsorContainer>().Instance(container).LifestyleSingleton());

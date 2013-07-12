@@ -8,5 +8,7 @@ namespace Laurus.Pfeffer.Server.Interface
 {
 	public interface IJobScheduler
 	{
+		// add a job and call IJobPublisher when it executes
+		void ScheduleJob(string cron, Entity.Job job);
 	}
 }

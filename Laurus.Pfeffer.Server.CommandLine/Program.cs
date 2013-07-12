@@ -22,9 +22,9 @@ namespace Laurus.Pfeffer.Server.CommandLine
 			{
 				x.Service(settings => container.Resolve<ServiceControl>());
 				x.RunAsLocalService();
-				x.SetDescription("TaskBoss Minion");
-				x.SetDisplayName("Task Boss Minion");
-				x.SetServiceName("TaskBossMinion");
+				x.SetDescription("Distributed task execution");
+				x.SetDisplayName("Laurus.Pfeffer");
+				x.SetServiceName("LaurusPfeffer");
 				x.StartAutomatically();
 			});
 

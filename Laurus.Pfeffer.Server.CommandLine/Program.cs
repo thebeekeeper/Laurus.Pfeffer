@@ -29,8 +29,8 @@ namespace Laurus.Pfeffer.Server.CommandLine
 			});
 
 			// for testing only
-			var server = container.Resolve<IServerQueue>();
-			server.Send(new TestMessage() { Content = "blah blah blah" }, "all");
+			//var server = container.Resolve<IServerQueue>();
+			//server.Send(new TestMessage() { Content = "blah blah blah" }, "all");
 		}
 
 		static IWindsorContainer BuildContainer(string directory)

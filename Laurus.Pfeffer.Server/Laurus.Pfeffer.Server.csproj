@@ -68,10 +68,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\Job.cs" />
     <Compile Include="Controller\AddJobHandler.cs" />
     <Compile Include="Controller\GetJobHandler.cs" />
     <Compile Include="Controller\ListJobsHandler.cs" />
+    <Compile Include="Controller\RunJobController.cs" />
     <Compile Include="WebApiHttpListener.cs" />
     <Compile Include="Interface\IHttpListener.cs" />
     <Compile Include="Interface\IJobPublisher.cs" />
@@ -94,6 +94,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Laurus.Pfeffer.Entity\Laurus.Pfeffer.Entity.csproj">
+      <Project>{2be215b7-e200-4970-8409-6a9eb74a3a2d}</Project>
+      <Name>Laurus.Pfeffer.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Laurus.Pfeffer.Messages\Laurus.Pfeffer.Messages.csproj">
       <Project>{58cb5072-98cd-4354-85de-51d6c18c3504}</Project>
       <Name>Laurus.Pfeffer.Messages</Name>

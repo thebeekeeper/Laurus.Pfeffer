@@ -29,7 +29,7 @@ namespace Laurus.Pfeffer.Server
 
 		void IHttpListener.Listen(int port)
 		{
-			var config = new HttpSelfHostConfiguration("http://localhost:8888");
+			var config = new HttpSelfHostConfiguration("http://apollo:8888");
 			config.DependencyResolver = _dependencyResolver;
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",

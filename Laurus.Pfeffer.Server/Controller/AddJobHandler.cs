@@ -18,8 +18,13 @@ namespace Laurus.Pfeffer.Server.Controller
 		public string Get(string name)
 		{
 			var id = 69;
-			_jobStore.Add(new Entity.Job() { Name = name, Id = id });
+			_jobStore.Add(new Entity.Job() { Name = name, Id = id, Executable = "notepad.exe" });
 			return "id = 69";
+		}
+
+		public string Post(string s)
+		{
+			return s;
 		}
 
 		private IJobStore _jobStore;

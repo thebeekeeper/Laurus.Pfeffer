@@ -8,18 +8,21 @@ using System.Web.Http;
 
 namespace Laurus.Pfeffer.Server.Controller
 {
-	public class GetJobController : ApiController
+	public class RunJobController : ApiController
 	{
-		public GetJobController(IJobStore jobStore)
+		public RunJobController(IJobStore jobStore, IJobPublisher jobPublisher)
 		{
 			_jobStore = jobStore;
+			_jobPublisher = jobPublisher;
 		}
 
-		public Entity.Job Get(int id)
+		public void Get()
 		{
-			return _jobStore.GetJobById(id);
+			var job = _jobStore.GetAll().First();
+			_jobPublisher.Publish(job);
 		}
 
 		private IJobStore _jobStore;
+		private IJobPublisher _jobPublisher;
 	}
 }

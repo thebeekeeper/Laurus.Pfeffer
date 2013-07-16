@@ -15,9 +15,9 @@ namespace Laurus.Pfeffer.Server.Controller
 			_jobStore = jobStore;
 		}
 
-		public string Get()
+		public IEnumerable<Entity.Job> Get()
 		{
-			return "jobs, hope, cash";
+			return _jobStore.GetAll();
 		}
 
 		private IJobStore _jobStore;

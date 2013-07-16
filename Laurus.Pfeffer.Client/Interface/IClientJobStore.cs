@@ -1,4 +1,4 @@
-﻿using Laurus.Pfeffer.Messages;
+﻿using Laurus.Pfeffer.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Laurus.Pfeffer.Client.Interface
 {
-	public interface IClientQueue
+	public interface IClientJobStore
 	{
-		void Receive();
+		Job GetJob(int id);
 	}
 }

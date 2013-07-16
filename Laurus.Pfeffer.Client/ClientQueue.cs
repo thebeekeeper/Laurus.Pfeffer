@@ -13,8 +13,17 @@ namespace Laurus.Pfeffer.Client
     {
 		private static readonly string EXCHANGE_NAME = "pfeffer_exchange";
 
-		void IClientQueue.Receive(string[] topics)
+		public ClientQueue(ISubscriptionStore subscriptions, IJobExecutor executor)
 		{
+			_subscriptions = subscriptions;
+			_executor = executor;
+		}
+
+		void IClientQueue.Receive()
+		{
+			// read topics from subscribed routes
+			var topics = _subscriptions.Read().Select(x => x.Route);
+
 			ConnectionFactory factory = new ConnectionFactory();
 			factory.HostName = "localhost";
 			using (IConnection connection = factory.CreateConnection())
@@ -25,6 +34,7 @@ namespace Laurus.Pfeffer.Client
 
 				foreach (string bindingKey in topics)
 				{
+					Console.WriteLine("Subscribing to {0}", bindingKey);
 					channel.QueueBind(queue_name, EXCHANGE_NAME, bindingKey);
 				}
 
@@ -44,8 +54,12 @@ namespace Laurus.Pfeffer.Client
 					string routingKey = ea.RoutingKey;
 					Console.WriteLine(" [x] Received '{0}':'{1}'",
 									  routingKey, message);
+					_executor.Execute(Int32.Parse(message));
 				}
 			}
 		}
+
+		private ISubscriptionStore _subscriptions;
+		private IJobExecutor _executor;
 	}
 }

@@ -11,8 +11,29 @@ namespace Laurus.Pfeffer.Client.Service
 	{
 		static void Main(string[] args)
 		{
-			IClientQueue client = new ClientQueue();
-			client.Receive(new[] { "all" });
+			ISubscriptionStore subscriptions = new SubscriptionStore();
+			subscriptions.Write(new Laurus.Pfeffer.Entity.Job()
+			{
+				Name = "Test subscription",
+				Route = "test"
+			});
+
+			subscriptions.Write(new Entity.Job()
+			{
+				Name = "hello",
+				Route = "orange.dog"
+			});
+
+			subscriptions.Write(new Entity.Job()
+			{
+				Name = "all queue",
+				Route = "all"
+			});
+
+			IJobExecutor executor = new DefaultJobExecutor(new ClientJobStore());
+			IClientQueue client = new ClientQueue(subscriptions, executor);
+			client.Receive();
+			//client.Receive(new[] { "all" });
 		}
 	}
 }

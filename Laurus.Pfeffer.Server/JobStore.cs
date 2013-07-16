@@ -9,24 +9,29 @@ namespace Laurus.Pfeffer.Server
 {
 	public class JobStore : IJobStore
 	{
+		public JobStore()
+		{
+			_jobs = new List<Entity.Job>();
+		}
+
 		Entity.Job IJobStore.GetJobById(int id)
 		{
-			return _jobs[id];
+			return _jobs.FirstOrDefault(j => j.Id == id);
 		}
 
 		IEnumerable<Entity.Job> IJobStore.GetAll()
 		{
-			return _jobs.Select(x => x.Value);
+			return _jobs;
 		}
 
 		int IJobStore.Add(Entity.Job job)
 		{
 			int id = new Random().Next(1000);
 			job.Id = id;
-			_jobs.Add(id, job);
+			_jobs.Add(job);
 			return id;
 		}
 
-		private IDictionary<int, Entity.Job> _jobs;
+		private IList<Entity.Job> _jobs;
 	}
 }

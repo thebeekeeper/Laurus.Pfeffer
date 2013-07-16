@@ -52,6 +52,10 @@
       <Project>{786b98ae-a120-46e2-bb3c-fabf706ee698}</Project>
       <Name>Laurus.Pfeffer.Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Laurus.Pfeffer.Entity\Laurus.Pfeffer.Entity.csproj">
+      <Project>{2be215b7-e200-4970-8409-6a9eb74a3a2d}</Project>
+      <Name>Laurus.Pfeffer.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

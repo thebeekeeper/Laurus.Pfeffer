@@ -20,6 +20,7 @@ namespace Laurus.Pfeffer.Server.Installer
 			container.Register(Component.For<IServerQueue>().ImplementedBy<ServerQueue>());
 			container.Register(Component.For<IHttpListener>().ImplementedBy<WebApiHttpListener>());
 			container.Register(Component.For<IJobStore>().ImplementedBy<JobStore>());
+			container.Register(Component.For<IJobPublisher>().ImplementedBy<JobPublisher>());
 
 			container.Register(Types.FromThisAssembly().BasedOn<ApiController>().LifestyleScoped());
 			container.Register(Component.For<IDependencyResolver>().ImplementedBy<WindsorDependencyResolver>());

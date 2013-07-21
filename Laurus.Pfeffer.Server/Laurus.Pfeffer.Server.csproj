@@ -48,7 +48,20 @@
     <Reference Include="RabbitMQ.Client">
       <HintPath>..\packages\RabbitMQ.Client.3.1.1\lib\net30\RabbitMQ.Client.dll</HintPath>
     </Reference>
+    <Reference Include="Raven.Abstractions">
+      <HintPath>..\packages\RavenDB.Client.2.0.2380\lib\net40\Raven.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Embedded">
+      <HintPath>..\packages\RavenDB.Embedded.2.0.2380\lib\net40\Raven.Client.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\packages\RavenDB.Client.2.0.2380\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Database">
+      <HintPath>..\packages\RavenDB.Database.2.0.2380\lib\net40\Raven.Database.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

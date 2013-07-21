@@ -16,9 +16,13 @@ namespace Laurus.Pfeffer.Server.Controller
 			_jobPublisher = jobPublisher;
 		}
 
-		public void Get()
+		public void Get(int id, string routes = null)
 		{
-			var job = _jobStore.GetAll().First();
+			var job = _jobStore.GetJobById(id);
+			if (routes != null)
+			{
+				job.Route = routes;
+			}
 			_jobPublisher.Publish(job);
 		}
 

@@ -17,6 +17,9 @@ namespace Laurus.Pfeffer.Server
 
 		void IServerQueue.Send(IMessage message, string route)
 		{
+			// empty route is shorthand for all routes
+			if (String.IsNullOrEmpty(route)) { route = "all"; }
+
 			// TODO: figure out if there's a bettery way to init a queue every time we send a message
 			ConnectionFactory factory = new ConnectionFactory();
 			factory.HostName = "localhost";

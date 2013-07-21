@@ -1,4 +1,7 @@
 ﻿using Laurus.Pfeffer.Server.Interface;
+using Raven.Client;
+using Raven.Client.Document;
+using Raven.Client.Embedded;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +12,30 @@ namespace Laurus.Pfeffer.Server
 {
 	public class JobStore : IJobStore
 	{
-		public JobStore()
+		public JobStore(IDocumentSession session)
 		{
-			_jobs = new List<Entity.Job>();
+			_session = session;
 		}
 
 		Entity.Job IJobStore.GetJobById(int id)
 		{
-			return _jobs.FirstOrDefault(j => j.Id == id);
+			var query = string.Format("jobs/{0}", id);
+			var job = _session.Load<Entity.Job>(query);
+			return job;
 		}
 
 		IEnumerable<Entity.Job> IJobStore.GetAll()
 		{
-			return _jobs;
+			return _session.Query<Entity.Job>();
 		}
 
 		int IJobStore.Add(Entity.Job job)
 		{
-			int id = new Random().Next(1000);
-			job.Id = id;
-			_jobs.Add(job);
-			return id;
+			_session.Store(job);
+			_session.SaveChanges();
+			return job.Id;
 		}
 
-		private IList<Entity.Job> _jobs;
+		private IDocumentSession _session;
 	}
 }

@@ -25,7 +25,8 @@ namespace Laurus.Pfeffer.Client
 			var topics = _subscriptions.Read().Select(x => x.Route);
 
 			ConnectionFactory factory = new ConnectionFactory();
-			factory.HostName = "localhost";
+			var queueHost = System.Configuration.ConfigurationManager.AppSettings["QueueHost"];
+			factory.HostName = queueHost;
 			using (IConnection connection = factory.CreateConnection())
 			using (IModel channel = connection.CreateModel())
 			{

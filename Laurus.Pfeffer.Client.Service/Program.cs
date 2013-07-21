@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,12 @@ namespace Laurus.Pfeffer.Client.Service
 			{
 				Name = "all queue",
 				Route = "all"
+			});
+
+			subscriptions.Write(new Entity.Job()
+			{
+				Name = "local queue",
+				Route = Dns.GetHostName()
 			});
 
 			IJobExecutor executor = new DefaultJobExecutor(new ClientJobStore());

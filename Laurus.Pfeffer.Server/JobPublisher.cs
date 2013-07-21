@@ -18,7 +18,7 @@ namespace Laurus.Pfeffer.Server
 		void IJobPublisher.Publish(Entity.Job job)
 		{
 			var message = new TriggerMessage(job.Id);
-			_queue.Send(message, "all");
+			_queue.Send(message, job.Route);
 		}
 
 		private IServerQueue _queue;

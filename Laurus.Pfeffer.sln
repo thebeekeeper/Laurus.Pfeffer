@@ -18,6 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laurus.Pfeffer.Entity", "Laurus.Pfeffer.Entity\Laurus.Pfeffer.Entity.csproj", "{2BE215B7-E200-4970-8409-6A9EB74A3A2D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestJobs", "TestJobs", "{38A9BCCA-0745-4D8B-A15E-F8CE2FA6FA75}"
+	ProjectSection(SolutionItems) = preProject
+		Simple.json = Simple.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{862DEE37-37AC-4724-91DD-6DC73E79240A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laurus.Pfeffer.Server.SystemTest", "Laurus.Pfeffer.Server.SystemTest\Laurus.Pfeffer.Server.SystemTest.csproj", "{A7203EA5-8BE6-4DC3-9BF9-3FCC9C152D73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,8 +57,15 @@ Global
 		{2BE215B7-E200-4970-8409-6A9EB74A3A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BE215B7-E200-4970-8409-6A9EB74A3A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BE215B7-E200-4970-8409-6A9EB74A3A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7203EA5-8BE6-4DC3-9BF9-3FCC9C152D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7203EA5-8BE6-4DC3-9BF9-3FCC9C152D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7203EA5-8BE6-4DC3-9BF9-3FCC9C152D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7203EA5-8BE6-4DC3-9BF9-3FCC9C152D73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7203EA5-8BE6-4DC3-9BF9-3FCC9C152D73} = {862DEE37-37AC-4724-91DD-6DC73E79240A}
 	EndGlobalSection
 EndGlobal

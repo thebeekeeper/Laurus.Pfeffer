@@ -29,7 +29,8 @@ namespace Laurus.Pfeffer.Server
 
 		void IHttpListener.Listen(int port)
 		{
-			var config = new HttpSelfHostConfiguration("http://apollo:8888");
+			// to register: netsh http add urlacl url=http://+:8880/ user=thebeekeeper as admin
+			var config = new HttpSelfHostConfiguration("http://apollo:8880");
 			config.DependencyResolver = _dependencyResolver;
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",

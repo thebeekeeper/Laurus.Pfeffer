@@ -22,9 +22,10 @@ namespace Laurus.Pfeffer.Server.Controller
 			return "id = 69";
 		}
 
-		public string Post(string s)
+		public int Post([FromBody]Entity.Job job)
 		{
-			return s;
+			var id = _jobStore.Add(job);
+			return id;
 		}
 
 		private IJobStore _jobStore;

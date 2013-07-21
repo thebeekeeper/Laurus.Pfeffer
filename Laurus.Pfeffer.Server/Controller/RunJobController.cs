@@ -21,9 +21,19 @@ namespace Laurus.Pfeffer.Server.Controller
 			var job = _jobStore.GetJobById(id);
 			if (routes != null)
 			{
-				job.Route = routes;
+				var newJob = new Entity.Job()
+				{
+					Name = job.Name,
+					Executable = job.Executable,
+					Route = routes,
+					Id = job.Id,
+				};
+				_jobPublisher.Publish(newJob);
 			}
-			_jobPublisher.Publish(job);
+			else
+			{
+				_jobPublisher.Publish(job);
+			}
 		}
 
 		private IJobStore _jobStore;

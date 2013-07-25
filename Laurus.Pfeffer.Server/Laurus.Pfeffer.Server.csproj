@@ -81,10 +81,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AddJobHandler.cs" />
+    <Compile Include="Controller\AddHandler.cs" />
     <Compile Include="Controller\GetJobHandler.cs" />
-    <Compile Include="Controller\ListJobsHandler.cs" />
-    <Compile Include="Controller\RunJobController.cs" />
+    <Compile Include="Controller\ListHandler.cs" />
+    <Compile Include="Controller\RunController.cs" />
     <Compile Include="WebApiHttpListener.cs" />
     <Compile Include="Interface\IHttpListener.cs" />
     <Compile Include="Interface\IJobPublisher.cs" />

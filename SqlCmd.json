@@ -1,0 +1,9 @@
+{
+  "Name": "Test SQLCmd",
+  "Route": "APOLLO",
+  "Executable": "sqlcmd",
+  "Arguments": [
+	"-i",
+	"hello.sql"
+  ]
+}

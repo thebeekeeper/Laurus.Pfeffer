@@ -8,9 +8,9 @@ using System.Web.Http;
 
 namespace Laurus.Pfeffer.Server.Controller
 {
-	public class RunJobController : ApiController
+	public class RunController : ApiController
 	{
-		public RunJobController(IJobStore jobStore, IJobPublisher jobPublisher)
+		public RunController(IJobStore jobStore, IJobPublisher jobPublisher)
 		{
 			_jobStore = jobStore;
 			_jobPublisher = jobPublisher;

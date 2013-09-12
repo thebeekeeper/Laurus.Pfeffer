@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Laurus.Pfeffer.Server
 {
@@ -34,6 +35,20 @@ namespace Laurus.Pfeffer.Server
 			_session.Store(job);
 			_session.SaveChanges();
 			return job.Id;
+		}
+
+		void IJobStore.AttachFile(int jobId, string filename)
+		{
+			var id = String.Format("jobs/{0}", jobId);
+			var data = System.IO.File.Open(filename, System.IO.FileMode.Open);
+			_session.Advanced.DocumentStore.DatabaseCommands.PutAttachment(id, null, data, new Raven.Json.Linq.RavenJObject() {{ "Description", "Job Package" }});
+		}
+
+		Stream IJobStore.GetAttachment(int jobId)
+		{
+			var id = String.Format("jobs/{0}", jobId);
+			var a = _session.Advanced.DocumentStore.DatabaseCommands.GetAttachment(id);
+			return a.Data();
 		}
 
 		private IDocumentSession _session;

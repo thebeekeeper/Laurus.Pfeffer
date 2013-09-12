@@ -16,5 +16,6 @@ namespace Laurus.Pfeffer.Entity
 		public string Route { get; set; }
 		public string Executable { get; set; }
 		public string[] Arguments { get; set; }
+		public bool HasPackage { get; set; }
 	}
 }

@@ -42,6 +42,9 @@ namespace Laurus.Pfeffer.Server
 			var id = String.Format("jobs/{0}", jobId);
 			var data = System.IO.File.Open(filename, System.IO.FileMode.Open);
 			_session.Advanced.DocumentStore.DatabaseCommands.PutAttachment(id, null, data, new Raven.Json.Linq.RavenJObject() {{ "Description", "Job Package" }});
+			var job = _session.Load<Entity.Job>(id);
+			job.HasPackage = true;
+			_session.SaveChanges();
 		}
 
 		Stream IJobStore.GetAttachment(int jobId)

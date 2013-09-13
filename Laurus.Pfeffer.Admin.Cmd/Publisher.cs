@@ -51,5 +51,14 @@ namespace Laurus.Pfeffer.Admin.Cmd
 			var response = client.GetAsync(String.Format("api/getjob?id={0}", id)).Result;
 			Console.WriteLine(response.Content.ReadAsStringAsync().Result);
 		}
+
+		public void UploadPackage(int id, string packageFile)
+		{
+			var client = new HttpClient();
+			client.BaseAddress = new Uri(System.Configuration.ConfigurationManager.AppSettings["Server"]);
+			var content = new StreamContent(System.IO.File.OpenRead(packageFile));
+			var result = client.PostAsync(String.Format("api/upload?jobId={0}", id), content).Result;
+			Console.WriteLine(result.StatusCode);
+		}
 	}
 }

@@ -33,6 +33,12 @@ namespace Laurus.Pfeffer.Admin.Cmd
 				case "/d":
 					p.GetDetails(Int32.Parse(args[1]));
 					break;
+				case "/u":
+					// upload package
+					var filename = args[1];
+					var job = Int32.Parse(args[2]);
+					p.UploadPackage(job, filename);
+					break;
 				default:
 					Console.WriteLine("Unknown command {0}", args[0]);
 					break;

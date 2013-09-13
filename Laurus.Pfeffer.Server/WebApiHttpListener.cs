@@ -31,6 +31,8 @@ namespace Laurus.Pfeffer.Server
 		{
 			// to register: netsh http add urlacl url=http://+:8880/ user=thebeekeeper as admin
 			var config = new HttpSelfHostConfiguration("http://apollo:8880");
+			config.MaxBufferSize = 2147483647;
+			config.MaxReceivedMessageSize = 2147483647;
 			config.DependencyResolver = _dependencyResolver;
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
